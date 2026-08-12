@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김도윤 — 연구 색인카드</title>
+<meta name="description" content="김도윤의 연구 아카이브 카드">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEAE0;
+    --paper-2:#F6F4EC;
+    --paper-line:#C7C2AF;
+    --ink:#232821;
+    --ink-soft:#5B6058;
+    --ink-faint:#8A8B80;
+    --stamp:#A8382C;
+    --tab:#3E6259;
+    --tab-light:#DCE7DE;
+    --highlight:#D8DE8E;
+    --shadow:rgba(35,40,33,0.18);
+    --radius:2px;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 1px 1px, rgba(35,40,33,0.06) 1px, transparent 0) 0 0/16px 16px,
+      var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:15px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--tab);}
+
+  .wrap{
+    max-width:880px;
+    margin:0 auto;
+    padding:0 20px 80px;
+  }
+
+  /* ---------- top drawer tabs ---------- */
+  .drawer-nav{
+    position:sticky;
+    top:0;
+    z-index:20;
+    display:flex;
+    gap:6px;
+    padding:14px 20px 0;
+    max-width:880px;
+    margin:0 auto;
+    background:var(--paper);
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .drawer-nav::-webkit-scrollbar{display:none;}
+  .drawer-nav a{
+    flex:0 0 auto;
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:var(--tab-light);
+    border:1px solid var(--paper-line);
+    border-bottom:none;
+    padding:8px 14px 10px;
+    border-radius:6px 6px 0 0;
+    white-space:nowrap;
+    transition:transform .15s ease, color .15s ease, background .15s ease;
+  }
+  .drawer-nav a:hover{
+    transform:translateY(-2px);
+    background:var(--highlight);
+    color:var(--ink);
+  }
+
+  /* ---------- hero catalog card ---------- */
+  .card{
+    background:var(--paper-2);
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    box-shadow:0 2px 0 var(--paper-line), 0 10px 24px -14px var(--shadow);
+    padding:34px 30px;
+    position:relative;
+    margin-top:18px;
+  }
+
+  .hero{
+    margin-top:0;
+  }
+
+  .hero-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+    font-size:11px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    border-bottom:2px solid var(--stamp);
+    padding-bottom:14px;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+  }
+
+  .call-number{
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+
+  .stamp{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    border:2px solid var(--stamp);
+    color:var(--stamp);
+    padding:4px 10px;
+    border-radius:4px;
+    transform:rotate(-4deg);
+    font-weight:700;
+    letter-spacing:.12em;
+  }
+
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:clamp(34px, 6vw, 54px);
+    line-height:1.05;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+
+  .role{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin:0 0 4px;
+  }
+
+  .affil{
+    font-size:14px;
+    color:var(--ink-faint);
+    margin:0 0 20px;
+  }
+  .affil a{color:var(--ink-faint); text-decoration:underline; text-decoration-color:var(--paper-line);}
+  .affil a:hover{color:var(--tab);}
+
+  .tagline{
+    font-family:'Caveat', cursive;
+    font-size:24px;
+    color:var(--tab);
+    margin:0;
+    line-height:1.2;
+  }
+
+  .keywords{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:22px;
+  }
+  .kw{
+    font-size:12px;
+    background:var(--tab-light);
+    color:var(--tab);
+    padding:5px 10px;
+    border-radius:20px;
+    border:1px solid var(--paper-line);
+  }
+
+  /* ---------- section headers ---------- */
+  section{margin-top:56px;}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    margin-bottom:6px;
+  }
+  .section-tag{
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--stamp);
+    font-weight:600;
+  }
+  h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:26px;
+    margin:0;
+  }
+  .section-sub{
+    color:var(--ink-faint);
+    font-size:13px;
+    margin:2px 0 24px;
+  }
+
+  /* ---------- about ---------- */
+  .about-card p{margin:0 0 14px;}
+  .about-card p:last-child{margin-bottom:0;}
+  .note{
+    font-family:'Caveat', cursive;
+    font-size:19px;
+    color:var(--ink-soft);
+    display:inline-block;
+    background:linear-gradient(to top, var(--highlight) 35%, transparent 35%);
+    padding:0 3px;
+  }
+
+  /* ---------- project index cards ---------- */
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:18px;
+  }
+
+  .idx-card{
+    background:var(--paper-2);
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    padding:20px 18px;
+    position:relative;
+    box-shadow:0 2px 0 var(--paper-line);
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .idx-card:hover{
+    transform:translateY(-5px) rotate(-0.6deg);
+    box-shadow:0 10px 18px -10px var(--shadow), 0 2px 0 var(--paper-line);
+  }
+
+  .idx-call{
+    font-size:11px;
+    color:var(--ink-faint);
+    letter-spacing:.06em;
+    display:flex;
+    justify-content:space-between;
+    border-bottom:1px dashed var(--paper-line);
+    padding-bottom:8px;
+    margin-bottom:12px;
+  }
+
+  .idx-card h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:18px;
+    margin:0 0 8px;
+  }
+  .idx-card p{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:0 0 12px;
+  }
+  .idx-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .idx-tags span{
+    font-size:11px;
+    color:var(--tab);
+    background:var(--tab-light);
+    padding:3px 8px;
+    border-radius:12px;
+  }
+
+  /* ---------- contact: checkout card ---------- */
+  .checkout{
+    background:var(--paper-2);
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    padding:0;
+    overflow:hidden;
+    box-shadow:0 2px 0 var(--paper-line);
+  }
+  .checkout-head{
+    background:var(--tab);
+    color:var(--tab-light);
+    padding:14px 20px;
+    font-size:12px;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  table.due{
+    width:100%;
+    border-collapse:collapse;
+  }
+  table.due th{
+    text-align:left;
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--ink-faint);
+    padding:12px 20px 8px;
+    border-bottom:1px solid var(--paper-line);
+  }
+  table.due td{
+    padding:12px 20px;
+    border-bottom:1px dashed var(--paper-line);
+    font-size:14px;
+    vertical-align:top;
+  }
+  table.due tr:last-child td{border-bottom:none;}
+  table.due td.stamped{
+    font-family:'Caveat', cursive;
+    font-size:20px;
+    color:var(--stamp);
+    white-space:nowrap;
+  }
+  table.due a{
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--paper-line);
+  }
+  table.due a:hover{
+    color:var(--tab);
+    border-color:var(--tab);
+  }
+
+  .checkout-foot{
+    padding:16px 20px 22px;
+    font-size:12.5px;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    margin-top:70px;
+    text-align:center;
+    font-size:11.5px;
+    color:var(--ink-faint);
+    letter-spacing:.03em;
+  }
+  footer .stamp-mini{
+    display:inline-block;
+    transform:rotate(-3deg);
+    border:1px solid var(--paper-line);
+    padding:6px 12px;
+    border-radius:4px;
+    margin-bottom:10px;
+  }
+
+  @media (max-width:560px){
+    .card{padding:24px 18px;}
+    .hero-top{flex-direction:column; align-items:flex-start;}
+    table.due td, table.due th{padding:10px 14px;}
+    section{margin-top:44px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .idx-card, .drawer-nav a{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="drawer-nav" aria-label="섹션 바로가기">
+  <a href="#about">소개</a>
+  <a href="#projects">관심사·프로젝트</a>
+  <a href="#contact">연락처</a>
+</nav>
+
+<div class="wrap">
+
+  <header class="card hero">
+    <div class="hero-top">
+      <span class="call-number">CALL NO. HCI–2018.KDY</span>
+      <span class="stamp">열람 가능</span>
+    </div>
+    <h1>김도윤</h1>
+    <p class="role">HCI 연구원 · 사람이 실수해도 안 무너지는 시스템을 만듭니다</p>
+    <p class="affil">서울대학교 인간-컴퓨터상호작용 연구실 (HCI Lab, SNU) · 박사과정 4년차</p>
+    <p class="tagline">"버그가 아니라 성격이라고 우겨보는 중입니다."</p>
+    <div class="keywords">
+      <span class="kw">Human-AI Interaction</span>
+      <span class="kw">협업 도구</span>
+      <span class="kw">사용자 연구</span>
+      <span class="kw">설명가능 AI</span>
+      <span class="kw">프로토타이핑</span>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="section-head">
+      <span class="section-tag">§01</span>
+      <h2>소개</h2>
+    </div>
+    <p class="section-sub">이 카드는 3년마다 갱신됩니다. 마지막 갱신: 2026년 8월</p>
+    <div class="card about-card">
+      <p>사람들이 AI와 <span class="note">일하다가 화내는 지점</span>을 연구합니다. 정확히는, 협업 도구가 신뢰를 잃는 순간을 붙잡아서 왜 그런지, 어떻게 고칠 수 있는지를 실험과 인터뷰로 파헤칩니다.</p>
+      <p>논문은 씁니다. 다만 리뷰어 2번이 만족하는 데는 항상 세 번의 리비전이 필요하다는 것도 압니다. 학부에서는 산업공학을, 대학원에서는 사람 관찰하는 법을 배웠고, 지금은 둘을 섞어서 "왜 사람들은 시스템을 오해하는가"를 데이터로 증명하는 일을 합니다.</p>
+      <p>협업에 진심입니다 — 특히 데이터셋 정리를 같이 해줄 파트너를 만나면요.</p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-head">
+      <span class="section-tag">§02</span>
+      <h2>관심사 · 프로젝트</h2>
+    </div>
+    <p class="section-sub">서랍을 당겨보세요. 카드마다 조금씩 삐뚤어져 있습니다 (의도된 겁니다)</p>
+    <div class="card-grid">
+
+      <article class="idx-card">
+        <div class="idx-call"><span>NO. 014</span><span>2024–현재</span></div>
+        <h3>Trust Repair UI</h3>
+        <p>AI가 실수했을 때 사용자의 신뢰가 얼마나, 어떻게 무너지는지 측정하고, 회복시키는 인터페이스 패턴을 설계합니다.</p>
+        <div class="idx-tags"><span>사용자 연구</span><span>실험설계</span><span>진행중</span></div>
+      </article>
+
+      <article class="idx-card">
+        <div class="idx-call"><span>NO. 011</span><span>2023–2024</span></div>
+        <h3>설명 가능한 추천 UI</h3>
+        <p>추천 이유를 어떻게 보여줘야 사람들이 실제로 더 나은 판단을 내리는지, 3개 플랫폼에서 실험했습니다.</p>
+        <div class="idx-tags"><span>XAI</span><span>CHI 2024</span></div>
+      </article>
+
+      <article class="idx-card">
+        <div class="idx-call"><span>NO. 009</span><span>2022–2023</span></div>
+        <h3>비동기 협업의 침묵 문제</h3>
+        <p>왜 다들 슬랙 메시지를 읽씹하는지 연구했습니다. 결론: 사람 잘못이 아니라 도구 설계 문제였습니다.</p>
+        <div class="idx-tags"><span>협업도구</span><span>CSCW 2023</span></div>
+      </article>
+
+      <article class="idx-card">
+        <div class="idx-call"><span>NO. 03</span><span>취미 서랍</span></div>
+        <h3>종이 프로토타입 수집</h3>
+        <p>연구 목적 반, 취미 반으로 오래된 UI 프로토타입과 index card를 모읍니다. 이 사이트가 그 결과물입니다.</p>
+        <div class="idx-tags"><span>아카이빙</span><span>진심 취미</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <span class="section-tag">§03</span>
+      <h2>연락처</h2>
+    </div>
+    <p class="section-sub">이 카드는 대출 가능합니다. 반납 기한은 딱히 없습니다</p>
+
+    <div class="checkout">
+      <div class="checkout-head">
+        <span>대출 카드 · Checkout Card</span>
+        <span>상태: 대출 가능</span>
+      </div>
+      <table class="due">
+        <thead>
+          <tr><th>경로</th><th>대출자 정보</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>이메일</td>
+            <td><a href="mailto:doyoon.kim@example.ac.kr">doyoon.kim@example.ac.kr</a></td>
+            <td class="stamped">가장 빠름</td>
+          </tr>
+          <tr>
+            <td>연구실</td>
+            <td>서울대학교 HCI Lab, 302호</td>
+            <td class="stamped">예약 필수</td>
+          </tr>
+          <tr>
+            <td>학술 프로필</td>
+            <td><a href="#" target="_blank" rel="noopener">Google Scholar ↗</a></td>
+            <td class="stamped">논문 목록</td>
+          </tr>
+          <tr>
+            <td>코드 저장소</td>
+            <td><a href="#" target="_blank" rel="noopener">github.com/doyoonkim ↗</a></td>
+            <td class="stamped">가끔 정리함</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="checkout-foot">
+        협업 문의, 공동연구, 세미나 초청 언제든 환영입니다. "이 사람 진짜 이 분야 아는 사람 맞나" 궁금하시면 위 논문 목록부터 확인해보세요.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="stamp-mini">이 페이지는 자기 자신을 재귀적으로 인용하지 않습니다 (아직은)</div>
+    <p>© 2026 김도윤 · 마지막 정리: 2026년 8월</p>
+  </footer>
+
+</div>
+</body>
+</html>
