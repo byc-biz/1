@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[본인 이름] | Research Portfolio</title>
+    
+    <!-- 깔끔하고 가독성 높은 웹 폰트 (Pretendard) 적용 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <style>
+        /* 미니멀리즘 컬러 팔레트 */
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #000000;
+            --text-secondary: #555555;
+            --line-color: #111111;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            word-break: keep-all;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 전체 레이아웃 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px 24px;
+        }
+
+        /* 헤더 (이름 및 소속) */
+        header {
+            margin-bottom: 80px;
+            border-bottom: 3px solid var(--line-color);
+            padding-bottom: 40px;
+        }
+
+        h1.name {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .affiliation {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        /* 철학/주관을 나타내는 섹션 (Manifesto) */
+        .manifesto {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 80px;
+            padding-left: 20px;
+            border-left: 4px solid var(--line-color);
+        }
+
+        /* 공통 섹션 스타일 */
+        section {
+            margin-bottom: 80px;
+        }
+
+        h2.section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 32px;
+            color: var(--text-secondary);
+        }
+
+        /* 프로젝트 및 관심사 리스트 */
+        .item-list {
+            list-style: none;
+        }
+
+        .item {
+            margin-bottom: 48px;
+        }
+
+        .item-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .item-desc {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* 연락처 섹션 */
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-links a {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-block;
+            width: fit-content;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color 0.2s ease;
+        }
+
+        .contact-links a:hover {
+            border-bottom-color: var(--text-main);
+        }
+
+        /* 푸터 */
+        footer {
+            margin-top: 120px;
+            padding-top: 24px;
+            border-top: 1px solid #eeeeee;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: left;
+        }
+
+        /* 반응형 (모바일) 대응 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 60px 20px;
+            }
+            header {
+                margin-bottom: 60px;
+                padding-bottom: 30px;
+            }
+            h1.name {
+                font-size: 2.2rem;
+            }
+            .manifesto {
+                font-size: 1.2rem;
+                margin-bottom: 60px;
+            }
+            .item-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 1. 헤더: 이름과 소속 -->
+        <header>
+            <h1 class="name">[이름 / Your Name]</h1>
+            <div class="affiliation">[소속 기관 및 직책 기입 / Title & Affiliation]</div>
+        </header>
+
+        <!-- 2. 주관을 강렬하게 드러내는 핵심 문장 -->
+        <div class="manifesto">
+            "현상의 표면이 아닌 본질을 탐구합니다.<br>
+            데이터와 이론을 교차하여 기존의 경계를 허무는 연구를 지향합니다."
+        </div>
+
+        <!-- 3. 관심사 및 연구 프로젝트 -->
+        <section id="research">
+            <h2 class="section-title">Research & Projects</h2>
+            <ul class="item-list">
+                <li class="item">
+                    <h3 class="item-title">[핵심 연구 주제 또는 프로젝트 명 1]</h3>
+                    <p class="item-desc">
+                        이 프로젝트가 다루는 핵심 문제와 연구자님만의 독창적인 접근 방식을 2~3줄로 간결하게 작성하세요. 어떤 방법론을 사용했고, 어떤 임팩트를 목표로 하는지 명시하면 좋습니다.
+                    </p>
+                </li>
+                <li class="item">
+                    <h3 class="item-title">[핵심 연구 주제 또는 프로젝트 명 2]</h3>
+                    <p class="item-desc">
+                        협업 파트너들이 흥미를 가질 만한 융합적 연구나 과거의 성공적인 분석 사례를 기입하세요. 장황한 설명보다는 결과와 시사점 위주로 적는 것이 뚜렷한 인상을 줍니다.
+                    </p>
+                </li>
+                <li class="item">
+                    <h3 class="item-title">[진행 중인 관심사 / Ongoing Interest]</h3>
+                    <p class="item-desc">
+                        현재 가장 몰두하고 있는 학술적 질문이나 실무적 난제를 작성하세요. 이 부분은 연구자로서의 다음 행보와 비전을 보여줍니다.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 4. 연락처 및 외부 링크 -->
+        <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:your.email@example.com">Email. your.email@example.com</a>
+                <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub (or Portfolio Link)</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- 5. 푸터 -->
+        <footer>
+            &copy; 2026 [본인 이름]. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
